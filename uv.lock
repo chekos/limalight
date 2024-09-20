@@ -132,14 +132,20 @@ name = "limelight"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "adafruit-circuitpython-ssd1306" },
     { name = "pillow" },
+]
+
+[package.optional-dependencies]
+rpi = [
+    { name = "adafruit-circuitpython-ssd1306" },
+    { name = "rpi-gpio" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "adafruit-circuitpython-ssd1306", extras = ["rpi"], specifier = ">=2.12.17" },
+    { name = "adafruit-circuitpython-ssd1306", marker = "extra == 'rpi'", specifier = ">=2.12.17" },
     { name = "pillow", specifier = ">=10.4.0" },
+    { name = "rpi-gpio", marker = "extra == 'rpi'", specifier = ">=0.7.1" },
 ]
 
 [[package]]
@@ -213,6 +219,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/d9/6e/433a5614132576289
 wheels = [
     { url = "https://files.pythonhosted.org/packages/15/a8/4982498b2ab44d1fcd5c49f07ea3795eab01601dc143b009d333fcace3b9/pyusb-1.2.1-py3-none-any.whl", hash = "sha256:2b4c7cb86dbadf044dfb9d3a4ff69fd217013dbe78a792177a3feb172449ea36", size = 58439 },
 ]
+
+[[package]]
+name = "rpi-gpio"
+version = "0.7.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/c4/0f/10b524a12b3445af1c607c27b2f5ed122ef55756e29942900e5c950735f2/RPi.GPIO-0.7.1.tar.gz", hash = "sha256:cd61c4b03c37b62bba4a5acfea9862749c33c618e0295e7e90aa4713fb373b70", size = 29090 }
 
 [[package]]
 name = "sysv-ipc"
