@@ -1,7 +1,7 @@
 [project]
 name = "limelight"
-version = "0.1.1.1"
-description = "Add your description here"
+version = "0.1.0"
+description = "A flexible display library for the Limonada Journaling Project, supporting both OLED hardware and terminal output."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
