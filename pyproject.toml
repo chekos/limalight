@@ -1,5 +1,5 @@
 [project]
-name = "limelight"
+name = "limalight"
 version = "0.1.0"
 description = "A flexible display library for the Limonada Journaling Project, supporting both OLED hardware and terminal output."
 readme = "README.md"
