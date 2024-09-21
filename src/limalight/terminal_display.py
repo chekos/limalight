@@ -25,7 +25,7 @@ class TerminalDisplay(BaseDisplay):
             while self.is_animating:
                 for frame in frames:
                     with self.lock:
-                        print(f"[Animation: {animation_name}] {frame}")
+                        print(f"[Animation: {animation_name}] {frame}", end="\r")
                     time.sleep(delay)
                 if not loop:
                     break
@@ -57,3 +57,6 @@ class TerminalDisplay(BaseDisplay):
         if self.current_thread and self.current_thread.is_alive():
             self.current_thread.join()
             self.current_thread = None
+
+    def display_idle(self):
+        self.play_animation("idle", loop=True, fps=2)
