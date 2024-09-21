@@ -129,8 +129,8 @@ class OLEDDisplay(BaseDisplay):
                 self.timer = threading.Timer(duration, self.clear)
             self.timer.start()
 
-    def display_idle(self):
-        self.play_animation("idle", loop=True, fps=2)
+    def display_idle(self, loop=True, fps=8):
+        self.play_animation("idle", loop=loop, fps=fps)
 
     def clear(self):
         self.stop_animation()
